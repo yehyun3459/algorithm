@@ -38,7 +38,7 @@ int main()
 		int result = 0;
 		for(int i=1;i<=N;i++)
 		{
-			find_set(i); //한번 더 대표 노드를 가리키도록 초기화
+			find_set(i); //한번 더 대표 노드를 가리키도록 
 			if(!cnt[p[i]])
 			{
 				cnt[p[i]] = 1;
