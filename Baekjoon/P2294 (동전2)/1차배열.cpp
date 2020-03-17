@@ -16,7 +16,7 @@ int main()
 	int N, K;
 	scanf("%d %d", &N, &K);
 	
-	memset(cost, 0, sizeof(cost));
+	//memset(cost, 0, sizeof(cost));
 	
 	for (int i = 1; i <= N; i++)
 	{
