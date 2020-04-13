@@ -44,7 +44,7 @@ void Solve()
 			int nr = cr + dx[cd]*k;
 			int nc = cc + dy[cd]*k;
 			if (nr <= 0 || nr > M || nc <= 0 || nc > N)continue;
-			if (board[nr][nc])break;
+			if (board[nr][nc])break;//1만큼 갈수있으면 저장, 1,2 둘다 가능이면 2 저장, 1,2,3 전부 가능이면 3저장
 			if(dp[nr][nc][cd]>dp[cr][cc][cd]+1||dp[nr][nc][cd]==-1)
 			{
 				dp[nr][nc][cd] = dp[cr][cc][cd] + 1;
