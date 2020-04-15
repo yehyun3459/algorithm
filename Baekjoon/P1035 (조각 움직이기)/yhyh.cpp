@@ -1,7 +1,7 @@
 //조각 움직이기 옛날에 못풀었던 문제!
 //1. 새로 움직일 위치를 지정한다(조합)
 //2. 연결되어있는지 확인(BFS)
-//3. 최소 이동거리 확인(이거는 순열로 했는데....)
+//3. 최소 이동거리 확인(이거는 순열로 했는데.... 모든 경우 탐색하는게 맞겠지?)
 #include <iostream>
 #include <queue>
 #include <vector> //벡터 조아~~
@@ -25,6 +25,7 @@ int minV = 987654321;
 int tmpv[5] = { 0,0,0,0,0 };
 void Solve(int cnt,int diff) //위치 차이 빼기(조합안에 순열이라니 ^^;)
 {
+	if (diff >= minV)return; //가지치기
 	if(cnt>=psize)
 	{
 		minV = min(minV, diff);
