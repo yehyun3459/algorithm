@@ -1,3 +1,6 @@
+//완탐으로 풀었는데 시간을 줄일수 있을까?
+//그냥 모든 제거 가능한 벽을 하나씩 제거해가면서 BFS 돌린듯
+//가지치기 안하면 아슬아슬하게 통과... 해도 500ms 정도 걸림
 #include <iostream>
 #include <cstring>
 #include <queue>
