@@ -1,4 +1,3 @@
-//벨만포드 공부하자....
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
@@ -7,19 +6,21 @@ using namespace std;
 
 #define MAX_SIZE 501
 #define INF 987654321
+typedef long long ll; //음수 사이클인 경우 오버플로가 발생할 수 있음 따라서 long long type으로 지정
 
 int N, M;
-int A, B, C;
-vector<pair<int,int>> adj[MAX_SIZE];
+int A, B;
+ll C;
+vector<pair<int, ll>> adj[MAX_SIZE];
 
 void bellmanFord(int src)
 {
 	//시작점을 제외한 모든 정점까지의 최단거리 상한을 INF로 둔다.
-	vector<int> upper(N+1, INF);
+	vector<ll> upper(N + 1, INF);
 	upper[src] = 0;
-	bool updated;
-	
-	if(adj[src].size()>0) //1번에서 반드시 나가는 간선이 있어야 함!
+	bool updated = false;
+
+	if (adj[src].size() > 0)
 	{
 		for (int n = 1; n <= N; n++)//v번 순회한다
 		{
@@ -29,7 +30,7 @@ void bellmanFord(int src)
 				for (int i = 0; i < adj[s].size(); i++) //s정점의 간선 수만큼
 				{
 					int d = adj[s][i].first;
-					int c = adj[s][i].second;
+					ll c = adj[s][i].second;
 
 					if (upper[d] > upper[s] + c) //완화를 시도한다.
 					{
@@ -46,22 +47,22 @@ void bellmanFord(int src)
 			return;
 		}
 	}
-	
-	
-	for(int i=2;i<=N;i++)
+
+
+	for (int i = 2; i <= N; i++)
 	{
-		printf("%d\n", upper[i] == INF ? -1 : upper[i]);
+		printf("%lld\n", upper[i] == INF ? -1 : upper[i]);
 	}
-	
+
 }
 
 int main()
 {
 	scanf("%d %d", &N, &M);
-	
-	for(int i=0;i<M;i++)
+
+	for (int i = 0; i < M; i++)
 	{
-		scanf("%d %d %d", &A, &B, &C);
+		scanf("%d %d %lld", &A, &B, &C);
 		adj[A].push_back({ B,C }); //도착 정점, 가중치 (1번 정점부터!!!!)
 	}
 	bellmanFord(1);
