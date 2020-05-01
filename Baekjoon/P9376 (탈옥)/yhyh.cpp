@@ -1,6 +1,7 @@
 //이잉ㅠㅠ 혼자 해결못함
 //deque가 필요하다고는 하는데 사실 잘 모르겠다 pq안쓰고 그냥 queue써도 다익스트라로만 잘 구현하면 해결됨
 //세 구역에서 BFS돌려서 해결하는 방법 신기하다 생각못함 ㅠㅠ 
+//이잉ㅠㅠ 혼자 해결못함
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
@@ -23,10 +24,6 @@ struct Info
 	int row;
 	int col;
 };
-//bool operator<(Info a,Info b)
-//{
-//	return a.doors > b.doors;
-//}
 
 void BFS(int _case,int sr,int sc)//탈출 가능?
 {
@@ -45,17 +42,9 @@ void BFS(int _case,int sr,int sc)//탈출 가능?
 			int nc = cc + dy[d];
 			if (nr<0 || nr>H + 1 || nc < 0 || nc > W + 1)continue;
 			if (board[nr][nc] == '*')continue;
-			else if(board[nr][nc]=='.')
+			else if (board[nr][nc] == '#')
 			{
-				if(visited[nr][nc][_c]==-1||visited[nr][nc][_c]>visited[cr][cc][_c])
-				{
-					visited[nr][nc][_c] = visited[cr][cc][_c];
-					q.push({ nr,nc });
-				}
-			}
-			else if(board[nr][nc]=='#')
-			{
-				if (visited[nr][nc][_c] == -1 || visited[nr][nc][_c] > visited[cr][cc][_c]+1)
+				if (visited[nr][nc][_c] == -1 || visited[nr][nc][_c] > visited[cr][cc][_c] + 1)
 				{
 					visited[nr][nc][_c] = visited[cr][cc][_c] + 1;
 					q.push({ nr,nc });
@@ -63,7 +52,7 @@ void BFS(int _case,int sr,int sc)//탈출 가능?
 			}
 			else
 			{
-				if (visited[nr][nc][_c] == -1 || visited[nr][nc][_c] > visited[cr][cc][_c])
+				if(visited[nr][nc][_c]==-1||visited[nr][nc][_c]>visited[cr][cc][_c])
 				{
 					visited[nr][nc][_c] = visited[cr][cc][_c];
 					q.push({ nr,nc });
@@ -79,7 +68,6 @@ int main()
 	cin.tie(0);
 	ios_base::sync_with_stdio(false);
 	cin >> T;
-	int num = 1;
 	while (T--)
 	{
 		cin >> H >> W;
