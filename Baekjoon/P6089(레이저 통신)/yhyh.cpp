@@ -15,7 +15,7 @@ using namespace std;
 
 int W, H;
 char board[101][101];
-int visited[101][101];
+int visited[101][101]; //최소 거울 개수 저장
 int sr, sc, er, ec;
 
 int dx[4] = { -1,1,0,0 };
@@ -46,7 +46,7 @@ void BFS()
 		int cc = q.front().col;
 		int cd = q.front().dir;
 		q.pop();
-		int nr = cr + dx[cd];
+		int nr = cr + dx[cd]; //거울을 쓰지 않고 방향 그대로 나가는 경우
 		int nc = cc + dy[cd];
 		if (nr >= 0 && nr < H && nc >= 0 && nc < W)
 		{
@@ -56,7 +56,7 @@ void BFS()
 				q.push({ nr,nc,cd });
 			}
 		}
-		
+		//거울을 쓰는 경우 (따라서 큐에 현재 방향 정보를 저장함)
 		if(cd==0||cd==1)
 		{
 			for(int d=2;d<=3;d++)
