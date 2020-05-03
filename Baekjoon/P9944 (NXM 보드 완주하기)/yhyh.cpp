@@ -7,7 +7,7 @@
 //3. 조건에 맞으면 min값 갱신하기
 //이렇게 풀었는데 input값이 작아서 그런지 시간초과 안나고 잘 돌아감
 //좀 골치아픈 부분이 있었는데 아예 이동을 안하는 경우에 cnt 처리가 좀 짜증났다
-//이 경우에는 아예 DFS 호출을 안하고 0 
+//이 경우에는 아예 DFS 호출을 안하고 0출력함
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
