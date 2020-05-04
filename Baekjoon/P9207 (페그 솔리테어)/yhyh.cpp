@@ -1,7 +1,7 @@
 //test data : https://gcpc.nwerc.eu/german-collegiate-programming-contest-2013 F번
 //하.....ㅎ...
 //미리 위치를 지정한 후에 했는데 계속 틀렸음 ㅠㅜ
-//결국 배열 전부 탐색해서 o인경우로 돌렸는데 시간 넉넉해서 ????했음
+//결국 배열 전부 탐색해서 o인경우에 돌렸는데 시간 넉넉해서 ????했음
 //그리고 8개라 그런가 딱히 가지치기 안해도 수월하게 통과해서 2차 ?????함
 //뭐지 이문제 왜 난 바보지
 #define _CRT_SECURE_NO_WARNINGS
