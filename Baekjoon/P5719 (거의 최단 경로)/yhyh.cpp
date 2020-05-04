@@ -1,5 +1,5 @@
 //최단거리 경로가 여러개 있는경우가 좀 골치아팠지만 딱히 어렵지는 않은 문제
-//으 여러개 있는 경우 때문에 부모노드 배열을 큐 처럼 
+//으 여러개 있는 경우 때문에 부모노드 배열을 큐 처럼 구현
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <queue>
