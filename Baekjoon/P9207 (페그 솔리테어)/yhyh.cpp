@@ -1,4 +1,4 @@
-//test data : https://gcpc.nwerc.eu/german-collegiate-programming-contest-2013
+//test data : https://gcpc.nwerc.eu/german-collegiate-programming-contest-2013 F번
 //하.....ㅎ...
 //미리 위치를 지정한 후에 했는데 계속 틀렸음 ㅠㅜ
 //결국 배열 전부 탐색해서 o인경우로 돌렸는데 시간 넉넉해서 ????했음
