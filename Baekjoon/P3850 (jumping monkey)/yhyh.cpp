@@ -67,11 +67,6 @@ int main()
 			adj[b] |= (1 << a);
 		}
 
-		if (M > N - 1)
-		{
-			cout<<"Impossible\n";
-			continue;
-		}
 		if (BFS())
 		{
 			stack<int> result; //재귀로 출력하면 시초남 ㅠㅠㅠㅠ 승질나아앜
